@@ -54,6 +54,8 @@ function getPageText(pageNum, PDFDocumentInstance) {
 module.exports.handler = (event, context, callback) => {
   console.log('event');
   console.log(JSON.stringify(event,null,2));
+  console.log('context');
+  console.log(JSON.stringify(context,null,2));
 
   let url = event.file;
   PDFJS.getDocument(url).then(function (PDFDocumentInstance) {
