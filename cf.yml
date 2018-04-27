@@ -10,6 +10,15 @@ Resources:
         Fn::GetAtt: [ LambdaRole , Arn ]
       Runtime: nodejs6.10
       Timeout: 300
+  MESHIFYpdfextracttextLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Join:
+          - ""
+          - - "/aws/lambda/"
+            - Ref: MESHIFYpdfextracttextFunction
+      RetentionInDays: 7
   LambdaRole:
     Type: AWS::IAM::Role
     Properties:
