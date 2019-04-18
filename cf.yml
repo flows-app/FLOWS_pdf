@@ -8,16 +8,12 @@ Resources:
       Handler: index.handler
       Role:
         Fn::GetAtt: [ LambdaRole , Arn ]
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       Timeout: 300
   extracttextLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: extracttextFunction
+      LogGroupName: !Sub "/aws/lambda/${extracttextFunction}"
       RetentionInDays: 7
   LambdaRole:
     Type: AWS::IAM::Role
@@ -39,7 +35,6 @@ Resources:
             Statement:
             - Effect: Allow
               Action:
-              - logs:CreateLogGroup
               - logs:CreateLogStream
               - logs:PutLogEvents
               Resource: arn:aws:logs:*:*:*
