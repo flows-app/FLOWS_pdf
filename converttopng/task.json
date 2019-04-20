@@ -1,0 +1,23 @@
+{
+  "id": "FLOWS/pdf/converttopng",
+  "lambda": "lambda-arn",
+  "role": "iam-arn",
+  "input": {
+      "examples": {
+          "pdfInline": {
+            "base64":"AB12=="
+          }
+      }
+  },
+  "output": {
+      "examples": {
+          "result": {
+              "image": "AB12=="
+          }
+      }
+  },
+  "type": "task",
+  "description": "converts any PDF into PNG images",
+  "icon": "https://flows.app/favicon.png",
+  "billing": "standard"
+}

@@ -3,23 +3,6 @@
     "lambda": "lambda-arn",
     "role": "iam-arn",
     "input": {
-        "schema": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "description": "pdf file",
-            "type": "object",
-            "properties": {
-                "account": {
-                    "type": "string"
-                },
-                "bucketName": {
-                    "type": "string"
-                },
-                "objectName": {
-                      "type": "string"
-                  }
-            },
-            "required": ["account"]
-        },
         "examples": {
             "pdffile": {
               "file":"https://blah.com/1.pdf"
@@ -27,11 +10,6 @@
         }
     },
     "output": {
-        "schema": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "description": "to be defined",
-            "type": "object"
-        },
         "examples": {
             "result": {
                 "name": "value"

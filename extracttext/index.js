@@ -1,4 +1,3 @@
-const FS  = require('fs');
 const PDFJS = require('pdfjs-dist');
 
 /**
@@ -51,7 +50,7 @@ function getPageText(pageNum, PDFDocumentInstance) {
     });
 }
 
-module.exports.handler = (event, context, callback) => {
+exports.handler = (event, context, callback) => {
   console.log('event');
   console.log(JSON.stringify(event,null,2));
   console.log('context');
