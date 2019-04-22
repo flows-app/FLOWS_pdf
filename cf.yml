@@ -24,7 +24,7 @@ Resources:
         Fn::GetAtt: [ LambdaRole , Arn ]
       Runtime: nodejs8.10
       Timeout: 300
-      MemorySize: 512
+      MemorySize: 1792
   converttopngLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
